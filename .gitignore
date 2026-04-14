@@ -1,0 +1,74 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+*.pyd
+
+# Distribution / packaging
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Virtual environments
+.venv
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+media/
+staticfiles/
+serviceAccountKey.json
+
+# Django Channels
+channels_redis/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Migrations (optional, regenerate with makemigrations)
+**/migrations/
+!**/migrations/__init__.py
+
+# Firebase (if any local)
+firebase.json
+.firebaserc
+
+# Testing
+htmlcov/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.pytest_cache/
+
+# Node (if frontend added later)
+node_modules/
+npm-debug.log*
