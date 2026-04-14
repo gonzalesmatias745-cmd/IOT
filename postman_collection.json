@@ -1,0 +1,90 @@
+{
+  "info": {
+    "name": "IoT Backend - Telemetria",
+    "_postman_id": "12345678-1234-1234-1234-123456789012",
+    "description": "Colección de pruebas para API de telemetría con WebSockets y Firebase",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "POST Ingesta Normal",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Role", "value": "sensor" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_servidor\": \"SRV-01\",\n  \"cpu\": 50,\n  \"ram\": 40,\n  \"temperatura\": 40\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/telemetria/ingesta/",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "8000",
+          "path": ["api", "telemetria", "ingesta", ""]
+        }
+      }
+    },
+    {
+      "name": "POST Ingesta Anomalia",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Role", "value": "sensor" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_servidor\": \"SRV-01\",\n  \"cpu\": 95,\n  \"ram\": 40,\n  \"temperatura\": 80\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/telemetria/ingesta/",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "8000",
+          "path": ["api", "telemetria", "ingesta", ""]
+        }
+      }
+    },
+    {
+      "name": "GET Estado Actual",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Role", "value": "admin" }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/telemetria/estado-actual/",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "8000",
+          "path": ["api", "telemetria", "estado-actual", ""]
+        }
+      }
+    },
+    {
+      "name": "GET Reporte Servidor",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Role", "value": "admin" }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/telemetria/reporte-servidor/SRV-01/?rango=ultimas_24h",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "8000",
+          "path": ["api", "telemetria", "reporte-servidor", "SRV-01", ""],
+          "query": [
+            {
+              "key": "rango",
+              "value": "ultimas_24h"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
